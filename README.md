@@ -1,5 +1,10 @@
 # JetBot
 
+A branch forked from NVIDIA-AI-IOT/jetbot and modified for Waveware Jetbot.
+Expect to keep update with the latest version of NVIDIA-AI-IOT/jetbot.
+
+---
+
 <!--[<img src="https://img.shields.io/discord/553852754058280961.svg">](https://discord.gg/Ady6NtF) -->
 
 > Looking for a quick way to get started with JetBot?  Many third party kits are [now available](https://jetbot.org/master/third_party_kits.html)!
