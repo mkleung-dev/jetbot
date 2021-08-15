@@ -3,3 +3,11 @@
 
 # MkDocs documentation
 site/
+
+build/*
+**/CMakeFiles/**
+jetbot.egg-info/*
+dist/*
+**/cmake_install.cmake
+**/Makefile
+CMakeCache.txt
