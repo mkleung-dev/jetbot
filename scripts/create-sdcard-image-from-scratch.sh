@@ -56,10 +56,11 @@ sudo -H pip3 install numpy torch-1.6.0rc2-cp36-cp36m-linux_aarch64.whl
 
 # Install torchvision package
 echo -e "\e[45m Install torchvision package \e[0m"
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
 cd
 git clone https://github.com/pytorch/vision
 cd vision
-#git checkout v0.4.0
+git checkout v0.7.0
 sudo -H python3 setup.py install
 
 # Install torch2trt
@@ -76,7 +77,7 @@ sudo python3 -m pip install git+https://github.com/ipython/traitlets@dead2b8cdde
 # Install jupyter lab
 echo -e "\e[48;5;172m Install Jupyter Lab \e[0m"
 sudo apt install -y curl
-curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 sudo apt install -y nodejs libffi-dev 
 sudo -H pip3 install jupyter jupyterlab
 sudo -H jupyter labextension install @jupyter-widgets/jupyterlab-manager
@@ -100,7 +101,9 @@ sudo jupyter lab build
 
 # Install bokeh
 sudo pip3 install bokeh
-sudo jupyter labextension install @bokeh/jupyter_bokeh
+sudo pip3 install jupyter_bokeh
+#below line only applies for Jupyter Lab older than 3.0
+#sudo jupyter labextension install @bokeh/jupyter_bokeh
 
 
 # install jetbot python module
@@ -111,8 +114,7 @@ sudo apt-get install -y cmake
 sudo python3 setup.py install 
 
 # Install jetbot services
-cd jetbot/utils
-python3 create_stats_service.py
+cd jetbot/utils python3 create_stats_service.py
 sudo mv jetbot_stats.service /etc/systemd/system/jetbot_stats.service
 sudo systemctl enable jetbot_stats
 sudo systemctl start jetbot_stats
